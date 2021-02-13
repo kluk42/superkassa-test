@@ -1,0 +1,25 @@
+.root {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 100vw;
+}
+
+.button {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  border: none;
+  border-radius: 100%;
+  background-color: blue;
+  line-height: 24px;
+  font-size: 22px;
+  outline: none;
+}
