@@ -2,6 +2,7 @@ const Button = require('../models/button');
 const WrongRequestErr = require('../errors/wrong-request-err');
 
 const updateButtonState = async (req, res, next) => {
+  console.log(req)
   try {
     if ((req.body.state !== 'on') && (req.body.state !== 'off')) {
       throw new WrongRequestErr('У кнопки может быть только два состояния: on или off');
