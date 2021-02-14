@@ -1,14 +1,11 @@
 const express = require('express');
-require('dotenv').config();
 const mongoose = require('mongoose');
 const cors = require('cors');
-const helmet = require('helmet');
 const router = require('./routes/index.js');
 const errorsCentral = require('./middlewares/errors');
 
-const { PORT = 4000 } = process.env;
+const PORT = 4000;
 const app = express();
-app.use(helmet());
 app.use(cors());
 
 const mongodbUrl = 'mongodb://localhost:27017/superkassa';
@@ -20,7 +17,6 @@ mongoose.connect(mongodbUrl, {
   useUnifiedTopology: true,
 });
 
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/', router);
